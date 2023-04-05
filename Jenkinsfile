@@ -25,7 +25,7 @@ steps{
 stage('Docker build image') {
               steps {
                   
-                  sh'sudo docker system prune -af '
+                  
                   sh 'sudo docker build -t rambikasharma/medicure:latest . '
               
                 }
