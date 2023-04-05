@@ -57,10 +57,10 @@ sh 'sudo scp -o StrictHostKeyChecking=no -i ./terraform_files/project2.pem medic
 sh 'sudo scp -o StrictHostKeyChecking=no -i ./terraform_files/project2.pem medicure-service.yml ubuntu@172.31.16.174:/home/ubuntu/'
 script{
 try{
-sh 'ssh -i ./terraform_files/project2.pem ubuntu@172.31.16.174 kubectl apply -f .'
+sh 'ssh -o StrictHostKeyChecking=no -i ./terraform_files/project2.pem ubuntu@172.31.16.174 kubectl apply -f .'
 }catch(error)
 {
-sh 'ssh -i ./terraform_files/project2.pem ubuntu@172.31.16.174 kubectl apply -f .'
+sh 'ssh -o StrictHostKeyChecking=no -i ./terraform_files/project2.pem ubuntu@172.31.16.174 kubectl apply -f .'
 }
 }
 }
